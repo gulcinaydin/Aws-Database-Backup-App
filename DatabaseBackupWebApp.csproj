@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.S3" Version="3.7.308.2" />
+    <PackageReference Include="MySql.Data" Version="8.4.0" />
+    <PackageReference Include="SSH.NET" Version="2024.0.0" />
+  </ItemGroup>
+
+</Project>

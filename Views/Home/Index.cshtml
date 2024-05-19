@@ -1,0 +1,29 @@
+﻿<div class="text-center">
+    <h1 class="display-4">Gülçin Aydın (İÖ) - ERP - AWS Database Backup</h1>
+    <h4>Aşağıdaki butona tıklayarak EC2 üzerindeki veritabanını yedekleyip, S3'e yükleyebilirsiniz. S3'e yükledikten sonra da bilgisayara indirebilirsiniz</h4>
+    <form asp-action="BackupDatabase" method="post">
+        <button type="submit" class="btn btn-primary mt-3">Veritabanını Yedekle</button>
+    </form>
+
+
+    @if (ViewBag.Message != null && ViewBag.Status == 1)
+    {
+        <div class="alert alert-success mt-3">
+            <h2>@ViewBag.Message</h2>
+
+            <p>Aşağıdaki butona tıklayarak S3'e yüklenmiş yedeklemeyi indirebilirsiniz. (internet bağlantınıza bağlı olarak indirmenin başlaması uzun sürebilir)</p>
+            <form asp-action="DownloadS3" method="post">
+                <button type="submit" class="btn btn-success mt-3">Yedeklemeyi İndir</button>
+                @Html.Hidden("keyName", $"{ViewBag.FileName}")
+            </form>
+        </div>
+    }
+
+    @if (ViewBag.Message != null && ViewBag.Status != 1)
+    {
+    <div class="alert alert-info mt-3">
+        <h2>@ViewBag.Message</h2>
+        
+    </div>
+    }
+</div>
