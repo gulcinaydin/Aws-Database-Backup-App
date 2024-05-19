@@ -68,7 +68,7 @@ public class AwsService : IAwsService
                 if (gzipResponse.Status == 0)
                 {
                     gzipResponse.Message =
-                        gzipResponse.Message?.Insert(0, "Sıkıştırılırken bir hat oluştu ");
+                        gzipResponse.Message?.Insert(0, "Sıkıştırılırken bir hata oluştu ");
                     return gzipResponse;
                 }
 
